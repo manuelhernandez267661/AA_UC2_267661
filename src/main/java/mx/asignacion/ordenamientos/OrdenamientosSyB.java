@@ -73,19 +73,35 @@ public class OrdenamientosSyB {
     }
 // Método de Inserción (Estructura base)
     public void insercion(int[] arr) {
+        // 1 asignación, 1 acceso = 2 operaciones
         int n = arr.length; 
         
+        // 1 asignación inicial; n comparaciones; (n-1) incrementos
         for (int i = 1; i < n; i++) { 
+            
+            // (n-1) asignaciones, (n-1) accesos
             int key = arr[i]; 
+            // (n-1) asignaciones, (n-1) restas
             int j = i - 1;    
             
+            // Peor caso (arreglo invertido): el while se ejecuta 'i' veces por ciclo.
+            // Total de comparaciones lógicas: n(n-1)/2
             while (j >= 0 && arr[j] > key) { 
+                
+                // n(n-1)/2 asignaciones y accesos
                 arr[j + 1] = arr[j]; 
+                // n(n-1)/2 asignaciones y restas
                 j = j - 1;           
             }
+            
+            // Colocar la "llave" en su posición correcta
+            // (n-1) asignaciones
             arr[j + 1] = key; 
         }
-    
+        /* * EXPRESIÓN ALGEBRAICA (Peor caso aproximado):
+         * T(n) = a*n^2 + b*n + c
+         * Notación Asintótica: O(n^2)
+         */
     }
 }
 
