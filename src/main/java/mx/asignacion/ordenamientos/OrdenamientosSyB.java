@@ -73,3 +73,8 @@ public class OrdenamientosSyB {
     } // Aquí termina el método burbuja
 
 } // <--- ¡AQUÍ TERMINA LA CLASE!
+
+// Método de Inserción (Estructura base)
+    public void insercion(int[] arr) {
+        System.out.println("El algoritmo de inserción se implementará en el siguiente commit...");
+    }
