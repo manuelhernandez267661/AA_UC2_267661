@@ -104,37 +104,55 @@ public class OrdenamientosSyB {
          */
     }
     public void quickSort (int[] arr) {
+       // 1 llamada a método
         quickSortRecursivo(arr, 0, arr.length - 1);
     }
+
+    // Método recursivo interno
     private void quickSortRecursivo(int[] arr, int inicio, int fin) {
-        if(inicio < fin) {
+        // 1 comparación
+        if (inicio < fin) {
+            // 1 asignación, 1 llamada a método
             int indiceParticion = particion(arr, inicio, fin);
             
-           quickSortRecursivo(arr, inicio, indiceParticion - 1);
-           quickSortRecursivo(arr, indiceParticion + 1, fin); 
-            
+            // 2 llamadas recursivas, 2 operaciones aritméticas
+            quickSortRecursivo(arr, inicio, indiceParticion - 1);
+            quickSortRecursivo(arr, indiceParticion + 1, fin);
         }
     }
+
+    // Método para dividir el arreglo (Lógica de partición)
     private int particion(int[] arr, int inicio, int fin) {
+        // 2 asignaciones, 1 acceso a arreglo, 1 resta = 4 operaciones base
         int pivote = arr[fin]; 
         int i = (inicio - 1);
 
+        // El ciclo se ejecuta 'n' veces (tamaño del subarreglo)
         for (int j = inicio; j < fin; j++) {
+            // n comparaciones, n accesos
             if (arr[j] < pivote) {
+                // Peor caso: n incrementos
                 i++;
-                // Intercambio (swap)
+                // Peor caso: 3n asignaciones, 4n accesos (Intercambio)
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
         }
 
-        // Colocar el pivote en su posición correcta
+        // Colocar el pivote: 3 asignaciones, 4 accesos, 2 sumas
         int temp = arr[i + 1];
         arr[i + 1] = arr[fin];
         arr[fin] = temp;
 
-        return i + 1;
+        return i + 1; // 1 retorno, 1 suma
+        
+        /* * EXPRESIÓN ALGEBRAICA Y COMPLEJIDAD:
+         * Mejor caso / Caso Promedio: El pivote divide el arreglo a la mitad.
+         * T(n) = 2T(n/2) + O(n) -> Notación Asintótica: O(n log n)
+         * Peor caso: El pivote es el mayor o menor elemento siempre.
+         * T(n) = T(n-1) + O(n) -> Notación Asintótica: O(n^2)
+         */
     }
 }
 
