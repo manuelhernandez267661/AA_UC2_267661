@@ -44,7 +44,7 @@ System.out.println("=== MENÚ DE ORDENAMIENTOS ===");
                 break;
             case 4:
                 System.out.println("Ejecutando Quicksort");
-                misOrdenamientos.quicksort(arreglo);
+                misOrdenamientos.quickSort(arreglo);
             default:
                 System.out.println("Opción no válida.");
                 return; 

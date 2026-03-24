@@ -103,8 +103,38 @@ public class OrdenamientosSyB {
          * Notación Asintótica: O(n^2)
          */
     }
-    public void quicksort (int[] arr) {
-        
+    public void quickSort (int[] arr) {
+        quickSortRecursivo(arr, 0, arr.length - 1);
+    }
+    private void quickSortRecursivo(int[] arr, int inicio, int fin) {
+        if(inicio < fin) {
+            int indiceParticion = particion(arr, inicio, fin);
+            
+           quickSortRecursivo(arr, inicio, indiceParticion - 1);
+           quickSortRecursivo(arr, indiceParticion + 1, fin); 
+            
+        }
+    }
+    private int particion(int[] arr, int inicio, int fin) {
+        int pivote = arr[fin]; 
+        int i = (inicio - 1);
+
+        for (int j = inicio; j < fin; j++) {
+            if (arr[j] < pivote) {
+                i++;
+                // Intercambio (swap)
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // Colocar el pivote en su posición correcta
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[fin];
+        arr[fin] = temp;
+
+        return i + 1;
     }
 }
 
