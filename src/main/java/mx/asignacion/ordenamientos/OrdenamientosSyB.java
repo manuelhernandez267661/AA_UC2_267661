@@ -103,5 +103,8 @@ public class OrdenamientosSyB {
          * Notación Asintótica: O(n^2)
          */
     }
+    public void quicksort (int[] arr) {
+        
+    }
 }
 

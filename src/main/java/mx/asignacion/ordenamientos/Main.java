@@ -42,6 +42,9 @@ System.out.println("=== MENÚ DE ORDENAMIENTOS ===");
                 System.out.println("Preparando Inserción...");
                 misOrdenamientos.insercion(arreglo);
                 break;
+            case 4:
+                System.out.println("Ejecutando Quicksort");
+                misOrdenamientos.quicksort(arreglo);
             default:
                 System.out.println("Opción no válida.");
                 return; 
