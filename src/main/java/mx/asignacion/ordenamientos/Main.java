@@ -22,8 +22,9 @@ public class Main {
 System.out.println("=== MENÚ DE ORDENAMIENTOS ===");
         System.out.println("1. Ordenamiento por Selección");
         System.out.println("2. Ordenamiento de Burbuja");
-        System.out.println("3. Ordenamiento por Inserción"); // <--- NUEVA OPCIÓN
-        System.out.print("Elige una opción (1, 2 o 3): ");
+        System.out.println("3. Ordenamiento por Inserción");
+        System.out.println("3. Ordenamiento por QuickSort");// <--- NUEVA OPCIÓN
+        System.out.print("Elige una opción (1, 2, 3 o 4): ");
         
         int opcion = scanner.nextInt();
 
@@ -45,6 +46,7 @@ System.out.println("=== MENÚ DE ORDENAMIENTOS ===");
             case 4:
                 System.out.println("Ejecutando Quicksort");
                 misOrdenamientos.quickSort(arreglo);
+                break;
             default:
                 System.out.println("Opción no válida.");
                 return; 
